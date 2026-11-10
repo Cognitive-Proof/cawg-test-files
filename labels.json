@@ -1,0 +1,1446 @@
+[
+  {
+    "file": "files/identity/trusted/t01_x509_creator.jpg",
+    "category": "identity/trusted",
+    "description": "Camera capture with an X.509 identity assertion (documentSigning EKU) naming its creator.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.signature.validated",
+      "cawg.x509.credential.trusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t02_x509_interim_smime.jpg",
+    "category": "identity/trusted",
+    "description": "Creator signs with an S/MIME certificate under the interim trust model: emailProtection EKU and the Organization-validated Multipurpose policy. Interim acceptance ends on 31 March 2027 for an assertion without a time stamp, so after that date this file becomes well-formed.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.credential.trusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t03_x509_creator_and_editor.jpg",
+    "category": "identity/trusted",
+    "description": "Two identity assertions in one claim (cawg.identity and cawg.identity__1): a creator and an editor, each with its own certificate.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      },
+      {
+        "label": "cawg.identity__1",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t04_x509_references_ingredient_claim.jpg",
+    "category": "identity/trusted",
+    "description": "t01 opened and cropped. The editor's identity assertion also references the c2pa.actions.v2 assertion in the parent's claim, which §5.1.1 allows.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t05_ica_verified_identities.jpg",
+    "category": "identity/trusted",
+    "description": "Identity claims aggregation credential from a trusted issuer (did:jwk) with one verified identity of each type: document verification, web site, affiliation, social media and crypto wallet.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.ica.credential_valid",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.credential_valid"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t06_x509_publisher_and_ica_creator.jpg",
+    "category": "identity/trusted",
+    "description": "A creator identified through identity claims aggregation and a publisher with its own X.509 certificate.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.ica.credential_valid",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      },
+      {
+        "label": "cawg.identity__1",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t07_x509_custom_role.jpg",
+    "category": "identity/trusted",
+    "description": "A role outside the predefined list (com.northwind.colorist), which §5.1.2 allows with C2PA label syntax.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t08_x509_no_role.jpg",
+    "category": "identity/trusted",
+    "description": "No role field: role is optional.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/trusted/t09_x509_hard_binding_only.jpg",
+    "category": "identity/trusted",
+    "description": "The identity assertion references only the hard binding, the minimum §5.1.1 allows.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/well-formed/w01_x509_untrusted_root.jpg",
+    "category": "identity/well-formed",
+    "description": "Valid X.509 identity signature whose certificate chains to a root on no trust list.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "well-formed",
+        "sdkOutcome": "well-formed",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.signature.validated",
+            "cawg.identity.well-formed"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.credential.untrusted"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.signature.validated",
+      "cawg.x509.credential.untrusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/well-formed/w02_x509_interim_mailbox_policy.jpg",
+    "category": "identity/well-formed",
+    "description": "S/MIME certificate with the Mailbox-validated Multipurpose policy, which the interim trust model excludes.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "well-formed",
+        "sdkOutcome": "well-formed",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.signature.validated",
+            "cawg.identity.well-formed"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.credential.untrusted"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.credential.untrusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/well-formed/w03_x509_email_without_policy.jpg",
+    "category": "identity/well-formed",
+    "description": "emailProtection certificate with no certificate policy, so the interim trust model doesn't apply.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "well-formed",
+        "sdkOutcome": "well-formed",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.signature.validated",
+            "cawg.identity.well-formed"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.credential.untrusted"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.credential.untrusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/well-formed/w04_x509_c2pa_claim_signer_cert.jpg",
+    "category": "identity/well-formed",
+    "description": "The identity assertion is signed with the C2PA claim signer's certificate. That root is a C2PA (manifest) trust anchor, not a CAWG one, so the named actor isn't trusted.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "well-formed",
+        "sdkOutcome": "well-formed",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.signature.validated",
+            "cawg.identity.well-formed"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.credential.untrusted"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.credential.untrusted"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/well-formed/w05_ica_untrusted_issuer.jpg",
+    "category": "identity/well-formed",
+    "description": "Valid identity claims aggregation credential from an issuer that isn't on the trusted issuer list.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "well-formed",
+        "sdkOutcome": "well-formed",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.identity.well-formed"
+          ],
+          "informational": [
+            "cawg.ica.untrusted_issuer"
+          ],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.untrusted_issuer"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/identity/invalid/x01_x509_signature_mismatch.jpg",
+    "category": "identity/invalid",
+    "description": "One bit of the X.509 COSE signature flipped.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.signature.mismatch"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.signature.mismatch"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x02_x509_algorithm_unsupported.jpg",
+    "category": "identity/invalid",
+    "description": "COSE alg header set to RS256, which C2PA doesn't allow.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.algorithm.unsupported"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.algorithm.unsupported"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x03_x509_certificate_expired.jpg",
+    "category": "identity/invalid",
+    "description": "Signed with a certificate that expired in 2021, with no time stamp.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.credential.untrusted",
+            "cawg.x509.signature.outside_validity"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.signature.outside_validity"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x04_x509_signed_different_payload.jpg",
+    "category": "identity/invalid",
+    "description": "The COSE signature covers a signer payload with fewer referenced assertions than the one in the assertion.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.x509.signature.mismatch"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.x509.signature.mismatch"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x05_hard_binding_missing.jpg",
+    "category": "identity/invalid",
+    "description": "referenced_assertions leaves out the claim's hard binding (c2pa.hash.data).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.hard_binding_missing"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.hard_binding_missing"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x06_hard_binding_incorrect.jpg",
+    "category": "identity/invalid",
+    "description": "t01 opened and cropped; the identity assertion references the parent's c2pa.hash.data instead of its own claim's.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.hard_binding_incorrect"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.hard_binding_incorrect"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x07_referenced_assertion_mismatch.jpg",
+    "category": "identity/invalid",
+    "description": "The hash of the referenced c2pa.actions.v2 doesn't match the claim's.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.assertion.mismatch"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.assertion.mismatch"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x08_referenced_assertion_duplicate.jpg",
+    "category": "identity/invalid",
+    "description": "c2pa.actions.v2 appears twice in referenced_assertions.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.assertion.duplicate"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.assertion.duplicate"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x09_pad_not_zero.jpg",
+    "category": "identity/invalid",
+    "description": "pad1 is filled with 0x01 bytes.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.pad.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.pad.invalid"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x10_signer_payload_missing.jpg",
+    "category": "identity/invalid",
+    "description": "The identity assertion has no signer_payload.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.cbor.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.cbor.invalid"
+    ],
+    "expectedLint": "signer_payload is missing",
+    "lint": [
+      "cawg.identity: signer_payload is missing"
+    ],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x11_role_empty_array.jpg",
+    "category": "identity/invalid",
+    "description": "role is an empty array; the CDDL requires at least one entry.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.cbor.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.cbor.invalid"
+    ],
+    "expectedLint": "role [] is not a non-empty array",
+    "lint": [
+      "cawg.identity: role [] is not a non-empty array of non-empty text strings"
+    ],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x12_sig_type_unknown.jpg",
+    "category": "identity/invalid",
+    "description": "sig_type com.example.unknown-credential, which no validator recognises.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.identity.sig_type.unknown"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.identity.sig_type.unknown"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Valid"
+  },
+  {
+    "file": "files/identity/invalid/x13_ica_signature_mismatch.jpg",
+    "category": "identity/invalid",
+    "description": "One bit of the ICA credential's COSE signature flipped.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.signature_mismatch"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.signature_mismatch"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x14_ica_signer_payload_mismatch.jpg",
+    "category": "identity/invalid",
+    "description": "The credential's c2paAsset has fewer referenced assertions than the assertion's signer_payload.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.signer_payload.mismatch"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.signer_payload.mismatch"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x15_ica_content_type_missing.jpg",
+    "category": "identity/invalid",
+    "description": "The ICA COSE_Sign1 has no content type header (application/vc is required).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.invalid_content_type"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.invalid_content_type"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x16_ica_valid_from_missing.jpg",
+    "category": "identity/invalid",
+    "description": "The credential has no validFrom.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.valid_from.missing"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.valid_from.missing"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x17_ica_valid_until_past.jpg",
+    "category": "identity/invalid",
+    "description": "The credential's validUntil is in 2025.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.valid_until.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.valid_until.invalid"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x18_ica_verified_identities_empty.jpg",
+    "category": "identity/invalid",
+    "description": "verifiedIdentities is an empty array.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.verified_identities.missing"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.verified_identities.missing"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x19_ica_crypto_wallet_without_address.jpg",
+    "category": "identity/invalid",
+    "description": "A cawg.crypto_wallet verified identity without address (§8.1.2.5 requires it).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.verified_identities.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.verified_identities.invalid"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x20_ica_social_media_without_username.jpg",
+    "category": "identity/invalid",
+    "description": "A cawg.social_media verified identity without username (§8.1.2.5 requires it).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.verified_identities.invalid"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.verified_identities.invalid"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x21_ica_revocation_unsupported.jpg",
+    "category": "identity/invalid",
+    "description": "The credential has a credentialStatus entry of a type the validator doesn't support.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.revocation.unsupported"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.revocation.unsupported"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/identity/invalid/x22_ica_did_method_unsupported.jpg",
+    "category": "identity/invalid",
+    "description": "The credential's issuer is a did:example DID, a method the validator can't resolve.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "invalid",
+        "sdkOutcome": "invalid",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match"
+          ],
+          "informational": [],
+          "failure": [
+            "cawg.ica.did_unsupported_method"
+          ]
+        }
+      }
+    ],
+    "expectedStatusCodes": [
+      "cawg.ica.did_unsupported_method"
+    ],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Invalid"
+  },
+  {
+    "file": "files/metadata/valid/m01_iptc_photo_metadata.jpg",
+    "category": "metadata/valid",
+    "description": "cawg.metadata with Dublin Core, IPTC Core and Extension, Photoshop and EXIF fields, referenced by the creator's identity assertion.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/metadata/valid/m02_custom_namespace.jpg",
+    "category": "metadata/valid",
+    "description": "A namespace outside the C2PA metadata allow-list: the c2pa.metadata restrictions don't apply to cawg.metadata (§3).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/metadata/valid/m03_context_array.jpg",
+    "category": "metadata/valid",
+    "description": "@context as an array of an IRI and a term map, both of which JSON-LD allows.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/metadata/invalid/mx01_context_missing.jpg",
+    "category": "metadata/invalid",
+    "description": "cawg.metadata without @context (§3 requires it).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "@context is missing",
+    "lint": [
+      "cawg.metadata: @context is missing"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/metadata/invalid/mx02_prefix_not_in_context.jpg",
+    "category": "metadata/invalid",
+    "description": "xmpRights:UsageTerms uses a prefix @context doesn't define, so JSON-LD expansion drops the field.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "xmpRights:UsageTerms uses prefix xmpRights",
+    "lint": [
+      "cawg.metadata: xmpRights:UsageTerms uses prefix xmpRights, which @context doesn't define"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/metadata/invalid/mx03_cbor_box.jpg",
+    "category": "metadata/invalid",
+    "description": "cawg.metadata stored as a CBOR assertion; §3 requires a JSON content type box.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "not in a JSON content type box",
+    "lint": [
+      "cawg.metadata: not in a JSON content type box"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/valid/tm01_all_not_allowed.jpg",
+    "category": "training-mining/valid",
+    "description": "All four standard entries notAllowed, referenced by the creator's identity assertion.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/valid/tm02_constrained.jpg",
+    "category": "training-mining/valid",
+    "description": "Generative training constrained with a licence URL; AI training constrained with no constraint_info, which §3 says to treat as notAllowed; the rest allowed.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/valid/tm03_custom_entry.jpg",
+    "category": "training-mining/valid",
+    "description": "An entity-specific entry (com.northwind.style_transfer) next to the standard ones.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/valid/tm04_with_metadata.jpg",
+    "category": "training-mining/valid",
+    "description": "Entries plus the optional metadata map, with no identity assertion.",
+    "identityAssertions": [],
+    "expectedStatusCodes": [],
+    "expectedLint": null,
+    "lint": [],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx01_entries_missing.jpg",
+    "category": "training-mining/invalid",
+    "description": "No entries map (§3.2 requires it).",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "entries is missing",
+    "lint": [
+      "cawg.training-mining: entries is missing"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx02_use_not_in_choice.jpg",
+    "category": "training-mining/invalid",
+    "description": "use \"prohibited\" isn't one of allowed, notAllowed or constrained.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "is not allowed, notAllowed or constrained",
+    "lint": [
+      "cawg.training-mining: entry cawg.ai_training use \"prohibited\" is not allowed, notAllowed or constrained"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx03_reserved_prefix.jpg",
+    "category": "training-mining/invalid",
+    "description": "cawg.ai_fine_tuning: the cawg. prefix is reserved for the standard entries.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "reserved cawg. prefix",
+    "lint": [
+      "cawg.training-mining: entry cawg.ai_fine_tuning uses the reserved cawg. prefix but isn't a standard entry"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx04_constraint_info_empty.jpg",
+    "category": "training-mining/invalid",
+    "description": "constraint_info is an empty string; the CDDL requires at least one character.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "constraint_info \"\" is not a non-empty text string",
+    "lint": [
+      "cawg.training-mining: entry cawg.ai_training constraint_info \"\" is not a non-empty text string"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx05_use_missing.jpg",
+    "category": "training-mining/invalid",
+    "description": "An entry with constraint_info but no use.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "has no use",
+    "lint": [
+      "cawg.training-mining: entry cawg.data_mining has no use"
+    ],
+    "sdkValidationState": "Trusted"
+  },
+  {
+    "file": "files/training-mining/invalid/tmx06_custom_key_not_a_label.jpg",
+    "category": "training-mining/invalid",
+    "description": "Custom entry key StyleTransfer doesn't follow the C2PA custom label syntax.",
+    "identityAssertions": [
+      {
+        "label": "cawg.identity",
+        "expectedOutcome": "trusted",
+        "sdkOutcome": "trusted",
+        "sdkStatus": {
+          "success": [
+            "assertion.hashedURI.match",
+            "cawg.x509.credential.trusted",
+            "cawg.x509.signature.validated",
+            "cawg.identity.trusted"
+          ],
+          "informational": [],
+          "failure": []
+        }
+      }
+    ],
+    "expectedStatusCodes": [],
+    "expectedLint": "isn't a valid custom label",
+    "lint": [
+      "cawg.training-mining: entry StyleTransfer isn't a valid custom label"
+    ],
+    "sdkValidationState": "Trusted"
+  }
+]

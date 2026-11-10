@@ -1,0 +1,23 @@
+[package]
+name = "cawg-testfiles"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Generates C2PA-signed test assets for the CAWG identity, metadata and training-and-data-mining assertions"
+
+[dependencies]
+# Built against the c2pa-rs `cawg/testfiles` worktree next to this repository: upstream main
+# plus the CAWG identity fixes listed in the README.
+c2pa = { path = "../c2pa-rs-cawg-testfiles/sdk", features = ["file_io"] }
+anyhow = "1"
+base64 = "0.23"
+# Same versions c2pa uses.
+c2pa_cbor = "0.78"
+c2pa_raw_crypto = "0.3"
+coset = "0.4.2"
+futures = { version = "0.3", default-features = false, features = ["executor"] }
+image = { version = "0.25", default-features = false, features = ["jpeg"] }
+openssl = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_bytes = "0.11"
+serde_json = "1"
