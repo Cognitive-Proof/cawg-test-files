@@ -3,6 +3,8 @@ name = "cawg-testfiles"
 version = "0.1.0"
 edition = "2021"
 publish = false
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Cognitive-Proof/cawg-test-files"
 description = "Generates C2PA-signed test assets for the CAWG identity, metadata and training-and-data-mining assertions"
 
 [dependencies]

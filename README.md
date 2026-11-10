@@ -9,7 +9,7 @@ C2PA-signed JPEGs for the three Creator Assertions Working Group specifications:
 - [Training and Data Mining Assertion 1.1](https://cawg.io/training-and-data-mining/1.1/)
   (`cawg.training-mining`).
 
-Built the same way as [c2pa-ai-examples](../c2pa-ai-examples): a Rust generator signs every file,
+Built the same way as c2pa-ai-examples: a Rust generator signs every file,
 reads it back, and fails if any file doesn't match its label.
 
 | Folder | What a validator should conclude |
@@ -191,3 +191,16 @@ The run rebuilds `files/`, `labels.json` and `settings/cawg-test-settings.json`,
 file back. It fails if any identity assertion's outcome or expected status code differs from its
 label, or if the lint result isn't the expected one. Signatures, instance IDs and timestamps change
 each run; the source image and credentials don't.
+
+## License
+
+Licensed under either of the [MIT License](LICENSE-MIT) or the
+[Apache License, Version 2.0](LICENSE-APACHE), at your option.
+
+The C2PA test certificates and keys in `settings/` come from
+[c2pa-rs](https://github.com/contentauth/c2pa-rs) and stay under its MIT licence; see
+[NOTICE](NOTICE). The keys in `credentials/` and `settings/` are published test keys: never
+use them for anything but test files.
+
+Unless you explicitly state otherwise, any contribution you submit for inclusion is licensed
+as above, without any additional terms or conditions.
