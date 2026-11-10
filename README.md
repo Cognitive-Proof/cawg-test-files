@@ -141,22 +141,25 @@ example use `constraint_info`. These files follow the CDDL.
 
 The generator builds against `../c2pa-rs-cawg-testfiles`, a worktree of the local c2pa-rs
 checkout on branch **`cawg/testfiles`**. That branch is upstream `main` (`4973da77`) with these
-branches merged in. None of them is pushed.
+branches merged in. Each fix is a pull request against contentauth/c2pa-rs from
+[mrappard/c2pa-rs-text-support](https://github.com/mrappard/c2pa-rs-text-support); the last
+five come from this project. `cawg/testfiles` itself is only local, so until the fixes are
+released, rebuilding these files needs the branches merged the same way.
 
-| Branch | What it fixes | Files that need it |
-|---|---|---|
-| `fix/cawg-identity-trusted` (**new**) | §7.2 `cawg.identity.trusted` was never issued (TODO CAI-7980), and ICA credentials got neither `trusted` nor `well-formed`. | every trusted and well-formed file |
-| `fix/cawg-ica-did-jwk-unpadded` (**new**) | `did:jwk` identifiers are unpadded base64url, but were decoded as padded, so most Ed25519 `did:jwk` issuers failed with `cawg.ica.invalid_did_document`. | every ICA file |
-| `fix/cawg-ica-signer-payload-length` (**new**) | The ICA cross-check zipped the two `referenced_assertions` lists. A credential covering fewer assertions than `signer_payload` passed, and the extra assertions counted as attested. | x14 |
-| `fix/cawg-identity-role-cddl` (**new**) | `role: []` (and blank roles) were accepted. | x11 |
-| `fix/metadata-unparseable-jsonld` (**new**) | Any `*.metadata` assertion that the `c2pa.metadata` model couldn't parse made the whole manifest store unreadable. That covered a JSON-LD `@context` array or a missing `@context`. CBOR-stored metadata was also reported as JSON. | m03, mx01, mx03 |
-| `fix/cawg-identity-cbor-invalid` | A malformed identity assertion failed the manifest instead of reporting `cawg.identity.cbor.invalid`. | x10, x11 |
-| `fix/cawg-identity-ingredient-references` | References into an ingredient's claim (§5.1.1) were reported as mismatches. | t04 |
-| `fix/cawg-identity-instance-label` | `cawg.identity__1` was reported under `cawg.identity`. | t03, t06 |
-| `fix/cawg-identity-well-formed-on-failure` | `well-formed` was reported alongside a validation failure. | invalid X.509 cases |
-| `fix/cawg-ica-verified-identities`, `fix/cawg-ica-verified-identity-types` | `verifiedIdentities` problems weren't reported with their §8.1.5 codes. | x18 to x20 |
-| `fix/cawg-ica-revocation-unsupported` | `credentialStatus` wasn't reported. | x21 |
-| `fix/cawg-ica-did-unsupported-method` | Unsupported DID methods were reported as an invalid issuer. | x22 |
+| Branch | PR | What it fixes | Files that need it |
+|---|---|---|---|
+| `fix/cawg-identity-trusted` | [#3056](https://github.com/contentauth/c2pa-rs/pull/3056) (stacked on #2837) | §7.2 `cawg.identity.trusted` was never issued (TODO CAI-7980), and ICA credentials got neither `trusted` nor `well-formed`. | every trusted and well-formed file |
+| `fix/cawg-ica-did-jwk-unpadded` | [#3052](https://github.com/contentauth/c2pa-rs/pull/3052) | `did:jwk` identifiers are unpadded base64url, but were decoded as padded, so most Ed25519 `did:jwk` issuers failed with `cawg.ica.invalid_did_document`. | every ICA file |
+| `fix/cawg-ica-signer-payload-length` | [#3053](https://github.com/contentauth/c2pa-rs/pull/3053) | The ICA cross-check zipped the two `referenced_assertions` lists. A credential covering fewer assertions than `signer_payload` passed, and the extra assertions counted as attested. | x14 |
+| `fix/cawg-identity-role-cddl` | [#3054](https://github.com/contentauth/c2pa-rs/pull/3054) | `role: []` (and blank roles) were accepted. | x11 |
+| `fix/metadata-unparseable-jsonld` | [#3055](https://github.com/contentauth/c2pa-rs/pull/3055) | Any `*.metadata` assertion that the `c2pa.metadata` model couldn't parse made the whole manifest store unreadable. That covered a JSON-LD `@context` array or a missing `@context`. CBOR-stored metadata was also reported as JSON. | m03, mx01, mx03 |
+| `fix/cawg-identity-cbor-invalid` | [#2842](https://github.com/contentauth/c2pa-rs/pull/2842) | A malformed identity assertion failed the manifest instead of reporting `cawg.identity.cbor.invalid`. | x10, x11 |
+| `fix/cawg-identity-ingredient-references` | [#2843](https://github.com/contentauth/c2pa-rs/pull/2843) | References into an ingredient's claim (§5.1.1) were reported as mismatches. | t04 |
+| `fix/cawg-identity-instance-label` | [#2836](https://github.com/contentauth/c2pa-rs/pull/2836) | `cawg.identity__1` was reported under `cawg.identity`. | t03, t06 |
+| `fix/cawg-identity-well-formed-on-failure` | [#2837](https://github.com/contentauth/c2pa-rs/pull/2837) | `well-formed` was reported alongside a validation failure. | invalid X.509 cases |
+| `fix/cawg-ica-verified-identities`, `fix/cawg-ica-verified-identity-types` | [#2839](https://github.com/contentauth/c2pa-rs/pull/2839), [#2844](https://github.com/contentauth/c2pa-rs/pull/2844) | `verifiedIdentities` problems weren't reported with their §8.1.5 codes. | x18 to x20 |
+| `fix/cawg-ica-revocation-unsupported` | [#2840](https://github.com/contentauth/c2pa-rs/pull/2840) | `credentialStatus` wasn't reported. | x21 |
+| `fix/cawg-ica-did-unsupported-method` | [#2838](https://github.com/contentauth/c2pa-rs/pull/2838) | Unsupported DID methods were reported as an invalid issuer. | x22 |
 
 The older fix branches came in through `scratch/cawg-all-fixes`. `fix/cawg-x509-status-url` is
 already upstream (#2841). Merging onto current `main` needed two test updates, in the merge
